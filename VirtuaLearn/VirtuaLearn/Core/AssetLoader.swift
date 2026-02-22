@@ -8,10 +8,16 @@ final class AssetLoader {
                 let url = Bundle.main.url(forResource: resourceName, withExtension: "usdz")
                 
                 guard let validUrl = url else {
-                    fatalError("Could not find \(resourceName).usdz in the app bundle.")
+                    throw NSError(domain: "AssetLoader", code: 404, userInfo: [NSLocalizedDescriptionKey: "Model '\(resourceName).usdz' not found. Please add the 3D asset to the project."])
                 }
                 
                 let entity = try ModelEntity.loadModel(contentsOf: validUrl)
+                
+                // Automatically play all embedded animations in a continuous loop
+                for animation in entity.availableAnimations {
+                    entity.playAnimation(animation.repeat())
+                }
+                
                 continuation.resume(returning: entity)
                 
             } catch {

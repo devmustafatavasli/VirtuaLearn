@@ -1,0 +1,128 @@
+[
+  {
+    "id": "A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D",
+    "title": "Hücre ve Organelleri",
+    "en_title": "Cell & Organelles",
+    "conceptDescription": "Bitki ve hayvan hücrelerinin temel yapılarını inceleyin.",
+    "en_conceptDescription": "Explore the fundamental structures of plant and animal cells.",
+    "detailedDescription": "Hücre, canlıların temel yapı taşıdır. Bir bitki hücresinde hücre duvarı, kloroplast, mitokondri ve çekirdek gibi çok önemli yapılar bulunur. Kloroplast fotosentez yaparken, mitokondri hücrenin enerji santralidir. Şimdi bu 3 boyutlu modeli kendi odanızda inceleyerek organelleri yakından tanıyabilirsiniz.",
+    "en_detailedDescription": "The cell is the basic building block of life. A plant cell contains crucial structures like the cell wall, chloroplasts, mitochondria, and nucleus. While chloroplasts perform photosynthesis, the mitochondria act as the cell's powerhouse. Now, you can closely examine the organelles by viewing this 3D model in your own room.",
+    "imageName": "img_plant_cell",
+    "usdzFileName": "plant_cell",
+    "categoryRawValue": "Fen Bilimleri",
+    "isFavorite": false,
+    "hotspots": [
+      {
+        "id": "HS_NUCLEUS_01",
+        "title": "Çekirdek",
+        "en_title": "Nucleus",
+        "description": "Hücrenin yönetim merkezidir. DNA burada bulunur.",
+        "en_description": "The control center of the cell. DNA is located here.",
+        "x": 0.0,
+        "y": 0.05,
+        "z": 0.0
+      },
+      {
+        "id": "HS_MITO_02",
+        "title": "Mitokondri",
+        "en_title": "Mitochondria",
+        "description": "Hücrenin enerji üretim merkezidir.",
+        "en_description": "The energy production center of the cell.",
+        "x": 0.1,
+        "y": 0.0,
+        "z": -0.05
+      }
+    ]
+  },
+  {
+    "id": "B2C3D4E5-F6A7-5B6C-9D0E-1F2A3B4C5D6E",
+    "title": "Güneş Sistemi",
+    "en_title": "Solar System",
+    "conceptDescription": "Gezegenlerin Güneş etrafındaki yörüngelerini keşfedin.",
+    "en_conceptDescription": "Discover the orbits of planets around the Sun.",
+    "detailedDescription": "Güneş sistemi; merkezinde Güneş ve onun etrafında belirli yörüngelerde dolanan gezegenler, uydular ve kuyruklu yıldızlardan oluşur. İç gezegenler kayalık yapıda iken, Jüpiter gibi dış gezegenler gaz devleridir. 3 boyutlu modelimizde Dünya'nın kendi etrafında ve Güneş etrafında nasıl döndüğünü gözlemleyebilirsiniz.",
+    "en_detailedDescription": "The solar system consists of the Sun at its center and planets, moons, and comets revolving in specific orbits. While inner planets have a rocky structure, outer planets like Jupiter are gas giants. In our 3D model, you can observe how Earth rotates on its axis and revolves around the Sun.",
+    "imageName": "img_solar_system",
+    "usdzFileName": "solar_system",
+    "categoryRawValue": "Fen Bilimleri",
+    "isFavorite": false
+  },
+  {
+    "id": "E5F6A7B8-C9D0-E1F2-A3B4-C5D6E7F8A9B0",
+    "title": "Vücudumuzdaki Sistemler",
+    "en_title": "Human Body Systems",
+    "conceptDescription": "İskelet, kas, solunum ve dolaşım sistemlerini inceleyin.",
+    "en_conceptDescription": "Examine the skeletal, muscular, respiratory, and circulatory systems.",
+    "detailedDescription": "Vücudumuzdaki sistemler birlikte çalışarak hayatta kalmamızı sağlar. İskelet sistemi vücudumuza şekil verirken, kas sistemi hareket etmemizi sağlar. Solunum sistemiyle oksijen alırız ve dolaşım sistemi bu oksijeni kan yoluyla tüm vücuda taşır. Bu etkileşimli 3 boyutlu modelle iç organlarımızın nasıl çalıştığını çok daha yakından görebilirsiniz.",
+    "en_detailedDescription": "The systems in our body work together to keep us alive. The skeletal system shapes our body, while the muscular system allows us to move. We take in oxygen through the respiratory system, and the circulatory system transports this oxygen throughout the body via blood. You can see how our internal organs work much closer with this interactive 3D model.",
+    "imageName": "img_human_body",
+    "usdzFileName": "human_body",
+    "categoryRawValue": "Fen Bilimleri",
+    "isFavorite": false
+  },
+  {
+    "id": "F6A7B8C9-D0E1-F2A3-B4C5-D6E7F8A9B0C1",
+    "title": "Maddenin Hâlleri",
+    "en_title": "States of Matter",
+    "conceptDescription": "Katı, sıvı ve gaz maddelerin tanecikli yapısını gözlemleyin.",
+    "en_conceptDescription": "Observe the particulate structure of solid, liquid, and gaseous matter.",
+    "detailedDescription": "Maddeler doğada katı, sıvı ve gaz olmak üzere üç temel hâlde bulunur. Katı maddelerin tanecikleri birbirine çok sıkı bağlıdır, sıvıların tanecikleri daha serbesttir, gazların tanecikleri ise bağımsız hareket eder. Isı aldıkça maddelerin hal değiştirmesini ve taneciklerin hareketini bu etkileşimli model üzerinden izleyebilirsiniz.",
+    "en_detailedDescription": "Matter exists in nature in three fundamental states: solid, liquid, and gas. The particles of solids are tightly packed, the particles of liquids move more freely, and the particles of gases move independently. You can trace how matter changes state as it receives heat and watch particle movement through this interactive model.",
+    "imageName": "img_states_of_matter",
+    "usdzFileName": "states_of_matter",
+    "categoryRawValue": "Fen Bilimleri",
+    "isFavorite": false
+  },
+  {
+    "id": "C3D4E5F6-A7B8-6C7D-0E1F-2A3B4C5D6E7F",
+    "title": "Geometrik Cisimlerin Açınımı",
+    "en_title": "Geometry Nets",
+    "conceptDescription": "Küp, silindir ve prizmaların 2 boyutlu açınımlarını görün.",
+    "en_conceptDescription": "View the 2D unfolded nets of cubes, cylinders, and prisms.",
+    "detailedDescription": "Geometrik cisimler üç boyutludur ve uzayda bir hacim kaplarlar. Örneğin bir silindirin açınımı yapıldığında, iki adet daire ve bir adet dikdörtgen elde edilir. Bu etkileşimli model sayesinde prizmaların yüzey alanlarının nasıl hesaplandığını ve kapalı hallerinin uzayda nasıl durduğunu keşfedebilirsiniz.",
+    "en_detailedDescription": "Geometric shapes are three-dimensional and occupy volume in space. For example, when a cylinder is unfolded, two circles and one rectangle are obtained. Through this interactive model, you can discover how the surface areas of prisms are calculated and how their closed states stand in space.",
+    "imageName": "img_geometry",
+    "usdzFileName": "geometry_net",
+    "categoryRawValue": "Matematik",
+    "isFavorite": false
+  },
+  {
+    "id": "A7B8C9D0-E1F2-A3B4-C5D6-E7F8A9B0C1D2",
+    "title": "Kesirler ve Oran",
+    "en_title": "Fractions and Ratios",
+    "conceptDescription": "Bütün, yarım ve çeyrek kavramlarını 3 boyutlu nesnelerle öğrenin.",
+    "en_conceptDescription": "Learn whole, half, and quarter concepts with 3D objects.",
+    "detailedDescription": "Bir bütünün eş parçalarından her birine kesir denir. Bir elmayı veya pizzayı iki eşit parçaya bölersek her bir parça yarım olur, dört eşit parçaya bölersek çeyrek olur. Kesirleri somutlaştırmak için bu 3 boyutlu modelimizi kullanarak oran kavramını mantıksal olarak kavrayabilirsiniz.",
+    "en_detailedDescription": "Each of the equal parts of a whole is called a fraction. If we divide an apple or a pizza into two equal parts, each part becomes a half; if we divide it into four equal parts, it becomes a quarter. To make fractions concrete, you can logically grasp the concept of ratio using this 3D model.",
+    "imageName": "img_fractions",
+    "usdzFileName": "fractions",
+    "categoryRawValue": "Matematik",
+    "isFavorite": false
+  },
+  {
+    "id": "D4E5F6A7-B8C9-7D8E-1F2A-3B4C5D6E7F8A",
+    "title": "Yeryüzü Şekilleri",
+    "en_title": "Landforms",
+    "conceptDescription": "Dağ, ova, vadi ve plato kavramlarını 3 boyutlu haritada inceleyin.",
+    "en_conceptDescription": "Examine mountains, plains, valleys, and plateaus on a 3D map.",
+    "detailedDescription": "Yeryüzü şekilleri doğanın uzun yıllar süren etkileşimi sonucu oluşmuştur. Dağlar çevresine göre yüksekte kalan kabartılarken, ovalar genellikle deniz seviyesine yakın düzlüklerdir. Platolar ise akarsular tarafından yarılmış yüksek düzlüklerdir. Önünüzdeki harita üzerinde bu farklılıkları yüksekliğine göre renklendirilmiş şekilde görebilirsiniz.",
+    "en_detailedDescription": "Landforms are created as a result of nature's long-term interaction. Mountains are elevated landmasses compared to their surroundings, while plains are generally flatlands close to sea level. Plateaus, on the other hand, are high plains cut by rivers. You can see these differences color-coded by elevation on the map in front of you.",
+    "imageName": "img_landforms",
+    "usdzFileName": "landforms",
+    "categoryRawValue": "Sosyal Bilgiler",
+    "isFavorite": false
+  },
+  {
+    "id": "B8C9D0E1-F2A3-B4C5-D6E7-F8A9B0C1D2E3",
+    "title": "Kültürel Miras",
+    "en_title": "Cultural Heritage",
+    "conceptDescription": "Tarihi eserleri ve geçmiş uygarlıkların izlerini yakından keşfedin.",
+    "en_conceptDescription": "Closely discover historical artifacts and the traces of past civilizations.",
+    "detailedDescription": "Ülkemiz geçmişte birçok farklı medeniyete ev sahipliği yapmıştır. Göbeklitepe, Efes Antik Kenti ve Hitit Güneş Kursu gibi eserler kültürel mirasımızın en önemli parçalarıdır. Bu eserlerin 3 boyutlu taranmış modellerini sanki bir müzedeymiş gibi kendi masanızın üzerinde detaylıca inceleyebilirsiniz.",
+    "en_detailedDescription": "Our country has hosted many different civilizations in the past. Artifacts like Göbeklitepe, the Ancient City of Ephesus, and the Hittite Sun Disk are the most important pieces of our cultural heritage. You can examine detailed 3D scanned models of these artifacts on your own desk as if you were in a museum.",
+    "imageName": "img_cultural_heritage",
+    "usdzFileName": "cultural_heritage",
+    "categoryRawValue": "Sosyal Bilgiler",
+    "isFavorite": false
+  }
+]

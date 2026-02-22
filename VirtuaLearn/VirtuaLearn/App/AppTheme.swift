@@ -8,10 +8,9 @@ struct AppTheme {
     // Subject specific colors
     static func color(for category: SubjectCategory) -> Color {
         switch category {
+        case .science: return .green
         case .math: return .blue
-        case .biology: return .green
-        case .physics: return .purple
-        case .chemistry: return .orange
+        case .socialStudies: return .orange
         }
     }
 }

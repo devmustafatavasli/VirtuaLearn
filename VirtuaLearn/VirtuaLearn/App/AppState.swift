@@ -6,6 +6,7 @@ import ARKit
 final class AppState {
     var isARSupported: Bool = false
     var selectedCategory: SubjectCategory? = nil
+    var isLanguageEnglish: Bool = false // Toggle for Turkish/English content
     
     init() {
         checkDeviceCapabilities()

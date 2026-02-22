@@ -26,16 +26,20 @@ final class AudioService: NSObject, AVSpeechSynthesizerDelegate {
         }
     }
     
-    func speak(text: String) {
+    func speak(text: String, languageCode: String? = nil) {
         if synthesizer.isSpeaking {
             synthesizer.stopSpeaking(at: .immediate)
         }
         
         let utterance = AVSpeechUtterance(string: text)
-        // Automatically default to the iOS active language, fitting for Turkish students if device is in TR
-        if let language = AVSpeechSynthesisVoice.currentLanguageCode() {
-            utterance.voice = AVSpeechSynthesisVoice(language: language)
+        
+        // Use provided language code, else default to device language
+        if let languageCode = languageCode {
+            utterance.voice = AVSpeechSynthesisVoice(language: languageCode)
+        } else if let deviceLanguage = AVSpeechSynthesisVoice.currentLanguageCode() {
+            utterance.voice = AVSpeechSynthesisVoice(language: deviceLanguage)
         }
+        
         utterance.rate = AVSpeechUtteranceDefaultSpeechRate
         
         synthesizer.speak(utterance)

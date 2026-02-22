@@ -19,6 +19,24 @@ final class ARViewModel {
                 self.placeActiveModel(at: transform)
             }
         }
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name("HotspotTapped"), object: nil, queue: .main) { [weak self] notification in
+            guard let self = self,
+                  let hotspotId = notification.object as? String,
+                  let concept = self.activeConcept else { return }
+            
+            Task { @MainActor in
+                if let matchedHotspot = concept.hotspots.first(where: { $0.id == hotspotId }) {
+                    print("Tapped Hotspot: \(matchedHotspot.title)")
+                    // Read the hotspot description, checking if the system is currently English vs Turkish
+                    // Ideally we'd pass AppState into the ViewModel, but for now we fallback to the AudioService's auto-lang logic
+                    let textToSpeak = AVSpeechSynthesisVoice.currentLanguageCode()?.hasPrefix("en") == true
+                        ? matchedHotspot.en_description
+                        : matchedHotspot.description
+                    AudioService.shared.speak(text: textToSpeak)
+                }
+            }
+        }
     }
     
     deinit {
@@ -37,7 +55,7 @@ final class ARViewModel {
             currentError = nil
             do {
                 let entity = try await AssetLoader.loadModelAsync(resourceName: concept.usdzFileName)
-                arManager.placeEntity(entity, at: transform)
+                arManager.placeEntity(entity, at: transform, with: concept.hotspots)
             } catch {
                 currentError = "Failed to load \(concept.title) model: \(error.localizedDescription)"
                 print(currentError!)

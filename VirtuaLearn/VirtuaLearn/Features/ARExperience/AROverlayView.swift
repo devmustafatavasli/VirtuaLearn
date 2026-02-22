@@ -3,6 +3,7 @@ import SwiftUI
 struct AROverlayView: View {
     @State private var viewModel = ARViewModel()
     @Environment(\.dismiss) private var dismiss
+    @Environment(AppState.self) private var appState
     
     let concept: ARConcept
     
@@ -25,7 +26,7 @@ struct AROverlayView: View {
                     
                     Spacer()
                     
-                    Text(concept.title)
+                    Text(appState.isLanguageEnglish ? concept.en_title : concept.title)
                         .font(.headline)
                         .padding(.horizontal, 16)
                         .padding(.vertical, 8)
@@ -38,7 +39,9 @@ struct AROverlayView: View {
                         if AudioService.shared.isSpeaking {
                             AudioService.shared.stop()
                         } else {
-                            AudioService.shared.speak(text: concept.conceptDescription)
+                            let textToSpeak = appState.isLanguageEnglish ? concept.en_detailedDescription : concept.detailedDescription
+                            let languageCode = appState.isLanguageEnglish ? "en-US" : "tr-TR"
+                            AudioService.shared.speak(text: textToSpeak, languageCode: languageCode)
                         }
                     }) {
                         Image(systemName: AudioService.shared.isSpeaking ? "speaker.wave.3.fill" : "speaker.wave.2.fill")
@@ -58,9 +61,9 @@ struct AROverlayView: View {
                         ProgressView()
                             .scaleEffect(1.5)
                             .progressViewStyle(.circular)
-                        Text("Loading 3D Model...")
+                        Text(appState.isLanguageEnglish ? "Loading 3D Model..." : "3 Boyutlu Model Yükleniyor...")
                             .font(.headline)
-                        Text("Please hold your device steady")
+                        Text(appState.isLanguageEnglish ? "Please hold your device steady" : "Lütfen cihazınızı sabit tutun")
                             .font(.caption)
                             .foregroundColor(.secondary)
                     }
@@ -82,12 +85,16 @@ struct AROverlayView: View {
                         HStack {
                             Image(systemName: "hand.tap.fill")
                                 .foregroundColor(.blue)
-                            Text("Interactive AR Mode")
+                            Text(appState.isLanguageEnglish ? "Interactive AR Mode" : "Etkileşimli AR Modu")
                                 .font(.subheadline)
                                 .fontWeight(.semibold)
                         }
                         
-                        Text("1. Point your camera at a flat, well-lit surface.\n2. Tap the screen to place the \(concept.title).")
+                        let instructions = appState.isLanguageEnglish
+                        ? "1. Point your camera at a flat, well-lit surface.\n2. Tap the screen to place the \(concept.en_title)."
+                        : "1. Kameranızı düz ve aydınlık bir yüzeye doğrultun.\n2. \(concept.title) modelini yerleştirmek için ekrana dokunun."
+                        
+                        Text(instructions)
                             .font(.caption)
                             .foregroundColor(.secondary)
                             .fixedSize(horizontal: false, vertical: true)
