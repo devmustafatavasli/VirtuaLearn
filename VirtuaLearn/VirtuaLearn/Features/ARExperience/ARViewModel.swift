@@ -15,7 +15,9 @@ final class ARViewModel {
     init() {
         NotificationCenter.default.addObserver(forName: NSNotification.Name("ARPlaneTapped"), object: nil, queue: .main) { [weak self] notification in
             guard let self = self, let transform = notification.object as? simd_float4x4 else { return }
-            self.placeActiveModel(at: transform)
+            Task { @MainActor in
+                self.placeActiveModel(at: transform)
+            }
         }
     }
     

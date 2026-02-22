@@ -31,20 +31,16 @@ struct DashboardView: View {
                         description: Text("Concepts will appear here once loaded.")
                     )
                 } else {
-                    List(filteredConcepts) { concept in
-                        NavigationLink(value: concept) {
-                            HStack {
-                                Image(systemName: "cube.transparent")
-                                    .foregroundColor(.blue)
-                                VStack(alignment: .leading) {
-                                    Text(concept.title).font(.headline)
-                                    Text(concept.conceptDescription)
-                                        .font(.subheadline)
-                                        .foregroundColor(.secondary)
-                                        .lineLimit(2)
+                    ScrollView {
+                        LazyVGrid(columns: [GridItem(.adaptive(minimum: 150), spacing: 16)], spacing: 16) {
+                            ForEach(filteredConcepts) { concept in
+                                NavigationLink(value: concept) {
+                                    ConceptCardView(concept: concept)
                                 }
+                                .buttonStyle(PlainButtonStyle())
                             }
                         }
+                        .padding()
                     }
                 }
             }
@@ -57,6 +53,48 @@ struct DashboardView: View {
             }
         }
     }
+}
+
+/// A highly polished, student-friendly card representing an educational concept.
+struct ConceptCardView: View {
+    let concept: ARConcept
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            ZStack {
+                Circle()
+                    .fill(AppTheme.color(for: concept.category).opacity(0.15))
+                    .frame(width: 60, height: 60)
+                Image(systemName: concept.category.iconName)
+                    .font(.system(size: 30))
+                    .foregroundColor(AppTheme.color(for: concept.category))
+            }
+            .padding(.top, 8)
+            
+            VStack(alignment: .leading, spacing: 4) {
+                Text(concept.title)
+                    .font(.headline)
+                    .fontWeight(.bold)
+                    .foregroundColor(.primary)
+                
+                Text(concept.conceptDescription)
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+                    .lineLimit(2)
+                    .multilineTextAlignment(.leading)
+            }
+        }
+        .padding()
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .fill(AppTheme.cardBackground)
+                .shadow(color: Color.black.opacity(0.05), radius: 8, x: 0, y: 4)
+        )
+    }
+}
+
+extension DashboardView {
     
     private func seedInitialDataIfNeeded() {
         guard concepts.isEmpty else { return }
