@@ -2,13 +2,20 @@ import Foundation
 import RealityKit
 
 final class AssetLoader {
-    static func loadModelAsync(resourceName: String) async throws -> ModelEntity {
+    /// Loads an ARConcept's 3D model either from the Main Bundle or the app's Documents directory.
+    static func loadModelAsync(for concept: ARConcept) async throws -> ModelEntity {
         return try await withCheckedThrowingContinuation { continuation in
             do {
-                let url = Bundle.main.url(forResource: resourceName, withExtension: "usdz")
+                let url: URL?
+                
+                if concept.isUserGenerated, let customPath = concept.customUsdzPath {
+                    url = StorageManager.shared.getModelURL(for: customPath)
+                } else {
+                    url = Bundle.main.url(forResource: concept.usdzFileName, withExtension: "usdz")
+                }
                 
                 guard let validUrl = url else {
-                    throw NSError(domain: "AssetLoader", code: 404, userInfo: [NSLocalizedDescriptionKey: "Model '\(resourceName).usdz' not found. Please add the 3D asset to the project."])
+                    throw NSError(domain: "AssetLoader", code: 404, userInfo: [NSLocalizedDescriptionKey: "Model for '\(concept.title)' not found."])
                 }
                 
                 let entity = try ModelEntity.loadModel(contentsOf: validUrl)

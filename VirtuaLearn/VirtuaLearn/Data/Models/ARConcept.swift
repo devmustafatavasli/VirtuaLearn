@@ -52,6 +52,9 @@ final class ARConcept {
     var usdzFileName: String
     var categoryRawValue: String
     var isFavorite: Bool
+    var isUserGenerated: Bool
+    var customUsdzPath: String?
+    var dateCreated: Date
     
     // Arrays for JSON decoding/encoding complex objects in SwiftData
     var hotspotsData: Data? 
@@ -73,7 +76,21 @@ final class ARConcept {
         set { categoryRawValue = newValue.rawValue }
     }
     
-    init(id: UUID = UUID(), title: String, en_title: String, conceptDescription: String, en_conceptDescription: String, detailedDescription: String, en_detailedDescription: String, imageName: String = "placeholder", usdzFileName: String, category: SubjectCategory, isFavorite: Bool = false, hotspots: [Hotspot] = []) {
+    init(id: UUID = UUID(), 
+         title: String, 
+         en_title: String, 
+         conceptDescription: String, 
+         en_conceptDescription: String, 
+         detailedDescription: String, 
+         en_detailedDescription: String, 
+         imageName: String = "placeholder", 
+         usdzFileName: String, 
+         category: SubjectCategory, 
+         isFavorite: Bool = false, 
+         isUserGenerated: Bool = false,
+         customUsdzPath: String? = nil,
+         dateCreated: Date = Date(),
+         hotspots: [Hotspot] = []) {
         self.id = id
         self.title = title
         self.en_title = en_title
@@ -85,6 +102,9 @@ final class ARConcept {
         self.usdzFileName = usdzFileName
         self.categoryRawValue = category.rawValue
         self.isFavorite = isFavorite
+        self.isUserGenerated = isUserGenerated
+        self.customUsdzPath = customUsdzPath
+        self.dateCreated = dateCreated
         self.hotspots = hotspots
     }
 }

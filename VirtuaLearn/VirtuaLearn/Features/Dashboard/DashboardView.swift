@@ -1,5 +1,6 @@
 import SwiftUI
 import SwiftData
+import RealityKit
 
 struct DashboardView: View {
     @Environment(AppState.self) private var appState
@@ -7,6 +8,7 @@ struct DashboardView: View {
     
     @Query(sort: \ARConcept.title) private var concepts: [ARConcept]
     @State private var selectedSubject: SubjectCategory = .science
+    @State private var isShowingCaptureSession = false
     
     var filteredConcepts: [ARConcept] {
         concepts.filter { $0.category == selectedSubject }
@@ -50,20 +52,42 @@ struct DashboardView: View {
             .navigationTitle("VirtuaLearn")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button(action: {
-                        withAnimation {
-                            appState.isLanguageEnglish.toggle()
+                    HStack(spacing: 16) {
+                        #if os(iOS) && !targetEnvironment(simulator)
+                        if ObjectCaptureSession.isSupported {
+                            Button(action: {
+                                isShowingCaptureSession = true
+                            }) {
+                                Image(systemName: "plus")
+                                    .font(.headline)
+                                    .fontWeight(.bold)
+                                    .padding(.horizontal, 12)
+                                    .padding(.vertical, 6)
+                                    .background(AppTheme.accentPrimary)
+                                    .foregroundColor(.white)
+                                    .clipShape(Capsule())
+                            }
                         }
-                    }) {
-                        Text(appState.isLanguageEnglish ? "🇹🇷 TR" : "🇬🇧 EN")
-                            .font(.subheadline)
-                            .fontWeight(.bold)
-                            .padding(.horizontal, 12)
-                            .padding(.vertical, 6)
-                            .background(AppTheme.cardBackground)
-                            .clipShape(Capsule())
+                        #endif
+                        
+                        Button(action: {
+                            withAnimation {
+                                appState.isLanguageEnglish.toggle()
+                            }
+                        }) {
+                            Text(appState.isLanguageEnglish ? "🇹🇷 TR" : "🇬🇧 EN")
+                                .font(.subheadline)
+                                .fontWeight(.bold)
+                                .padding(.horizontal, 12)
+                                .padding(.vertical, 6)
+                                .background(AppTheme.cardBackground)
+                                .clipShape(Capsule())
+                        }
                     }
                 }
+            }
+            .sheet(isPresented: $isShowingCaptureSession) {
+                CaptureSessionView()
             }
             .navigationDestination(for: ARConcept.self) { concept in
                 AROverlayView(concept: concept)

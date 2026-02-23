@@ -54,7 +54,7 @@ final class ARViewModel {
             isModelLoading = true
             currentError = nil
             do {
-                let entity = try await AssetLoader.loadModelAsync(resourceName: concept.usdzFileName)
+                let entity = try await AssetLoader.loadModelAsync(for: concept)
                 arManager.placeEntity(entity, at: transform, with: concept.hotspots)
             } catch {
                 currentError = "Failed to load \(concept.title) model: \(error.localizedDescription)"
