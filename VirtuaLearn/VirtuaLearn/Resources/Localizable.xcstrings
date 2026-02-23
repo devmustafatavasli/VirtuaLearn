@@ -1,0 +1,156 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "1. Point your camera at a flat, well-lit surface.\n2. Tap the screen to place the %@." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1. Kameranızı düz ve aydınlık bir yüzeye doğrultun.\n2. %@ modelini yerleştirmek için ekrana dokunun."
+          }
+        }
+      }
+    },
+    "AR capabilities not supported on this device." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AR özellikleri bu cihazda desteklenmiyor."
+          }
+        }
+      }
+    },
+    "Concepts will appear here once loaded." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Konular yüklendiğinde burada görünecek."
+          }
+        }
+      }
+    },
+    "Experience education like never before. Dive into subjects using Augmented Reality." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eğitimi daha önce hiç olmadığı gibi deneyimleyin. Artırılmış Gerçeklik ile konuları yakından inceleyin."
+          }
+        }
+      }
+    },
+    "Find a flat, well-lit surface and place 3D educational models right in your room." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Düz ve iyi aydınlatılmış bir yüzey bulun ve 3 boyutlu eğitim modellerini doğrudan odanıza yerleştirin."
+          }
+        }
+      }
+    },
+    "Get Started" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Başla"
+          }
+        }
+      }
+    },
+    "Interactive AR Mode" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Etkileşimli AR Modu"
+          }
+        }
+      }
+    },
+    "Learn Interactively" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Etkileşimli Öğrenin"
+          }
+        }
+      }
+    },
+    "Loading 3D Model..." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3 Boyutlu Model Yükleniyor..."
+          }
+        }
+      }
+    },
+    "No Data" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Veri Yok"
+          }
+        }
+      }
+    },
+    "Please hold your device steady" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lütfen cihazınızı sabit tutun"
+          }
+        }
+      }
+    },
+    "Scan your Environment" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çevrenizi Tarayın"
+          }
+        }
+      }
+    },
+    "Subject" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ders"
+          }
+        }
+      }
+    },
+    "Tap on glowing hotspots to hear detailed, bilingual explanations of concepts." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kavramların detaylı ve iki dilli açıklamalarını duymak için parlayan sıcak noktalara dokunun."
+          }
+        }
+      }
+    },
+    "Welcome to VirtuaLearn" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VirtuaLearn'e Hoş Geldiniz"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

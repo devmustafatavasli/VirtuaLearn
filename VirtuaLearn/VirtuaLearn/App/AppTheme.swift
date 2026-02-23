@@ -4,13 +4,14 @@ import SwiftUI
 struct AppTheme {
     static let primaryBackground = Color(UIColor.systemGroupedBackground)
     static let cardBackground = Color(UIColor.secondarySystemGroupedBackground)
+    static let accentPrimary = Color(UIColor.systemBlue)
     
-    // Subject specific colors
+    // Subject specific colors (using iOS adaptive system colors)
     static func color(for category: SubjectCategory) -> Color {
         switch category {
-        case .science: return .green
-        case .math: return .blue
-        case .socialStudies: return .orange
+        case .science: return Color(UIColor.systemGreen)
+        case .math: return Color(UIColor.systemBlue)
+        case .socialStudies: return Color(UIColor.systemOrange)
         }
     }
 }

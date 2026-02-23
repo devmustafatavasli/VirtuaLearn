@@ -61,9 +61,9 @@ struct AROverlayView: View {
                         ProgressView()
                             .scaleEffect(1.5)
                             .progressViewStyle(.circular)
-                        Text(appState.isLanguageEnglish ? "Loading 3D Model..." : "3 Boyutlu Model Yükleniyor...")
+                        Text("Loading 3D Model...")
                             .font(.headline)
-                        Text(appState.isLanguageEnglish ? "Please hold your device steady" : "Lütfen cihazınızı sabit tutun")
+                        Text("Please hold your device steady")
                             .font(.caption)
                             .foregroundColor(.secondary)
                     }
@@ -85,16 +85,13 @@ struct AROverlayView: View {
                         HStack {
                             Image(systemName: "hand.tap.fill")
                                 .foregroundColor(.blue)
-                            Text(appState.isLanguageEnglish ? "Interactive AR Mode" : "Etkileşimli AR Modu")
+                            Text("Interactive AR Mode")
                                 .font(.subheadline)
                                 .fontWeight(.semibold)
                         }
                         
-                        let instructions = appState.isLanguageEnglish
-                        ? "1. Point your camera at a flat, well-lit surface.\n2. Tap the screen to place the \(concept.en_title)."
-                        : "1. Kameranızı düz ve aydınlık bir yüzeye doğrultun.\n2. \(concept.title) modelini yerleştirmek için ekrana dokunun."
-                        
-                        Text(instructions)
+                        let conceptTitle = appState.isLanguageEnglish ? concept.en_title : concept.title
+                        Text("1. Point your camera at a flat, well-lit surface.\n2. Tap the screen to place the \(conceptTitle).")
                             .font(.caption)
                             .foregroundColor(.secondary)
                             .fixedSize(horizontal: false, vertical: true)
